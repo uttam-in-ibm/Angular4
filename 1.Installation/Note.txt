@@ -1,0 +1,15 @@
+1. Install nodejs
+2. npm install -g @angular/cli
+3. ng --version
+
+# Create new Project
+4. ng new hello-world
+
+Visual Studio Code
+Ctrl + Shift + P
+# To open the folder with Studio Code
+code .
+
+# Development Server Start
+ng serve
+
