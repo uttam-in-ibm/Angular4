@@ -11,3 +11,17 @@ import {Component} from '@angular/core'
 })
 export class CoursesComponent{
 }
+
+//Component Creation Steps
+/*
+Create the component
+Register the component in a module - inside declarations array
+Finally we used in template of app.component.html
+*/
+
+/*
+This is Tedious work
+Automated step 
+ng g c course
+All the files are created for us
+*/
