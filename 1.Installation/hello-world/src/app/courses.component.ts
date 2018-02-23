@@ -7,9 +7,16 @@ import {Component} from '@angular/core'
 // Declarator function
 @Component({
     selector:'courses',  //  <courses>
-    template:'<h2>Courses</h2>'
+    //template:'<h2> Header Title </h2>'  //Data binding - expression
+    //template:'<h2>{{ title }}</h2>'  //Data binding - expression
+    //template:'<h2>{{ "Tile: "+title }}</h2>'  //Data binding - expression
+    template:'<h2>{{ getTitle() }}</h2>'  //Data binding - expression
 })
 export class CoursesComponent{
+    title = "List of courses";
+    getTitle(){
+        return this.title;
+    }
 }
 
 //Component Creation Steps
