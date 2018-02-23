@@ -10,10 +10,20 @@ import {Component} from '@angular/core'
     //template:'<h2> Header Title </h2>'  //Data binding - expression
     //template:'<h2>{{ title }}</h2>'  //Data binding - expression
     //template:'<h2>{{ "Tile: "+title }}</h2>'  //Data binding - expression
-    template:'<h2>{{ getTitle() }}</h2>'  //Data binding - expression
+    //template:'<h2>{{ getTitle() }}</h2>'  //Data binding - expression
+    template:`
+    <h2>
+        <ul>
+            <li *ngFor="let course of courses">
+                {{course}}
+            </li>
+        </ul>
+    </h2>
+    `  // Change to back tick - multiline
 })
 export class CoursesComponent{
     title = "List of courses";
+    courses = ["course1","course2","course3","course4"];
     getTitle(){
         return this.title;
     }
