@@ -1,0 +1,13 @@
+npm install -g typescript
+
+# TS Compiler
+tsc --version
+
+# Compile and Run
+tsc main.ts
+node main.js
+
+tsc main.ts | node main.js
+
+This process is done under hood by the angular framework
+
