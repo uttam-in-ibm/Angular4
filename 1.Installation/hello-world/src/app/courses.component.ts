@@ -13,6 +13,8 @@ import { CoursesService } from './courses.service';
     //template:'<h2>{{ "Tile: "+title }}</h2>'  //Data binding - expression
     //template:'<h2>{{ getTitle() }}</h2>'  //Data binding - expression
     template:`
+    <h2>{{title}}</h2>
+    <h2 [textContent]="title"></h2>
     <h2>
         <ul>
             <li *ngFor="let course of courses">
@@ -20,10 +22,14 @@ import { CoursesService } from './courses.service';
             </li>
         </ul>
     </h2>
+    <img src="{{imageUrl}}">
+    <img [src]="imageUrl">
+    
     `  // Change to back tick - multiline
 })
 export class CoursesComponent{
     title = "List of courses";
+    imageUrl = "http://gifimage.net/wp-content/uploads/2017/07/gif-online.gif"
     courses;
 
     constructor(service: CoursesService){ // New method not tightly coupled // Argumets added dynamically
