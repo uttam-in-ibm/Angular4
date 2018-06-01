@@ -15,6 +15,11 @@ import { CoursesService } from './courses.service';
     template:`
     <h2>{{title}}</h2>
     <h2 [textContent]="title"></h2>
+    <table>
+        <tr>
+            <td [attr.colspan]="colSpan">Table</td>
+        </tr>
+    </table>
     <h2>
         <ul>
             <li *ngFor="let course of courses">
@@ -29,6 +34,7 @@ import { CoursesService } from './courses.service';
 })
 export class CoursesComponent{
     title = "List of courses";
+    colSpan = 3
     imageUrl = "http://gifimage.net/wp-content/uploads/2017/07/gif-online.gif"
     courses;
 
