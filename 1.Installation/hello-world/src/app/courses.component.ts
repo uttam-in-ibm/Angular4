@@ -2,6 +2,7 @@
 // Make a file like this
 // Add meta data
 import {Component} from '@angular/core'
+import { CoursesService } from './courses.service';
 // Create this Class
 
 // Declarator function
@@ -23,13 +24,17 @@ import {Component} from '@angular/core'
 })
 export class CoursesComponent{
     title = "List of courses";
-    courses = ["course1","course2","course3","course4"];
+    courses;
 
-    // Logic to call an http Service
-    // Take care
-    
-    getTitle(){
-        return this.title;
+    constructor(service: CoursesService){ // New method not tightly coupled // Argumets added dynamically
+        // below method in tightly coupled
+        // cannot changed at run time
+        //let service = new CoursesService();
+
+
+        // Dependancy injection
+        // When CoursesComponent is created it will see for dependencies create them and then injects them
+        this.courses = service.getCourses();
     }
 }
 

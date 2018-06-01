@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses.component';
 import { CourseComponent } from './course/course.component';
+import { CoursesService } from './courses.service';
 
 // Add your new component here in declarations
 @NgModule({
@@ -16,7 +17,9 @@ import { CourseComponent } from './course/course.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    CoursesService  //Dependency injection creates single instance of this 
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
