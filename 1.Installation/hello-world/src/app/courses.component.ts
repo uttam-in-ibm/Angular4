@@ -15,7 +15,7 @@ import { CoursesService } from './courses.service';
 
     // npm install bootstrap --save
     template:`
-        <input (keyup.enter)="onKeyUp($event)"/>
+        <input #email (keyup.enter)="onKeyUp(email.value)"/>
     
     `  // Change to back tick - multiline
 })
@@ -25,8 +25,8 @@ export class CoursesComponent{
     colSpan = 3
     imageUrl = "http://gifimage.net/wp-content/uploads/2017/07/gif-online.gif"
     courses;
-    onKeyUp($event){        
-        console.log("Enter was pressed",$event);
+    onKeyUp(email){        
+        console.log(email);
     }
 }
 
