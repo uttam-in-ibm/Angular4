@@ -15,25 +15,7 @@ import { CoursesService } from './courses.service';
 
     // npm install bootstrap --save
     template:`
-    <div (click)="onDivClick($event)">
-    <button (click)="onSave($event)" class="btn btn-primary" [style.backgroundColor]="isActive ? 'blue' : 'white'" [class.active]="isActive">Save</button>
-    </div>
-    <h2>{{title}}</h2>
-    <h2 [textContent]="title"></h2>
-    <table>
-        <tr>
-            <td [attr.colspan]="colSpan">Table</td>
-        </tr>
-    </table>
-    <h2>
-        <ul>
-            <li *ngFor="let course of courses">
-                {{course}}
-            </li>
-        </ul>
-    </h2>
-    <img src="{{imageUrl}}">
-    <img [src]="imageUrl">
+        <input (keyup.enter)="onKeyUp($event)"/>
     
     `  // Change to back tick - multiline
 })
@@ -43,23 +25,8 @@ export class CoursesComponent{
     colSpan = 3
     imageUrl = "http://gifimage.net/wp-content/uploads/2017/07/gif-online.gif"
     courses;
-    onSave($event){
-        $event.stopPropagation();  // Stop event bubbling
-        console.log("Button was clicked",$event);
-    }
-
-    onDivClick($event){
-        console.log("Div was clicked",$event);
-    }    
-    constructor(service: CoursesService){ // New method not tightly coupled // Argumets added dynamically
-        // below method in tightly coupled
-        // cannot changed at run time
-        //let service = new CoursesService();
-
-
-        // Dependancy injection
-        // When CoursesComponent is created it will see for dependencies create them and then injects them
-        this.courses = service.getCourses();
+    onKeyUp($event){        
+        console.log("Enter was pressed",$event);
     }
 }
 
