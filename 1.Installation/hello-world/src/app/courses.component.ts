@@ -15,18 +15,14 @@ import { CoursesService } from './courses.service';
 
     // npm install bootstrap --save
     template:`
-        <input #email (keyup.enter)="onKeyUp(email.value)"/>
+        <input [value]="email" (keyup.enter)="email=$event.target.value;onKeyUp()"/>
     
     `  // Change to back tick - multiline
 })
 export class CoursesComponent{
-    isActive = true; // false
-    title = "List of courses";
-    colSpan = 3
-    imageUrl = "http://gifimage.net/wp-content/uploads/2017/07/gif-online.gif"
-    courses;
-    onKeyUp(email){        
-        console.log(email);
+    email="panasala@in.ibm.com";
+    onKeyUp(){        
+        console.log(this.email);
     }
 }
 

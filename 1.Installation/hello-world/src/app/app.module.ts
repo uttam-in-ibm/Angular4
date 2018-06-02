@@ -15,7 +15,7 @@ import { CoursesService } from './courses.service';
     CourseComponent 
   ],
   imports: [
-    BrowserModule
+    BrowserModule    
   ],
   providers: [
     CoursesService  //Dependency injection creates single instance of this 
