@@ -13,6 +13,7 @@ import { CoursesService } from './courses.service';
     //template:'<h2>{{ "Tile: "+title }}</h2>'  //Data binding - expression
     //template:'<h2>{{ getTitle() }}</h2>'  //Data binding - expression
     template:`
+    <button class="btn btn-primary">Save</button>
     <h2>{{title}}</h2>
     <h2 [textContent]="title"></h2>
     <table>
