@@ -15,7 +15,7 @@ import { CoursesService } from './courses.service';
 
     // npm install bootstrap --save
     template:`
-    <button class="btn btn-primary">Save</button>
+    <button class="btn btn-primary" [class.active]="isActive">Save</button>
     <h2>{{title}}</h2>
     <h2 [textContent]="title"></h2>
     <table>
@@ -36,6 +36,7 @@ import { CoursesService } from './courses.service';
     `  // Change to back tick - multiline
 })
 export class CoursesComponent{
+    isActive = true; // false
     title = "List of courses";
     colSpan = 3
     imageUrl = "http://gifimage.net/wp-content/uploads/2017/07/gif-online.gif"
