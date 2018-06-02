@@ -1,34 +1,24 @@
-// To create a component
-// Make a file like this
-// Add meta data
+
 import {Component} from '@angular/core'
 import { CoursesService } from './courses.service';
-// Create this Class
 
-// Declarator function
 @Component({
-    selector:'courses',  //  <courses>
+    selector:'courses',
     template:`    
-        <input [(ngModel)]="email" (keyup.enter)="onKeyUp()"/>    
-    `  // Change to back tick - multiline
+        {{courses.title | uppercase | lowercase}} <br/>
+        {{courses.students | number }} <br/>
+        {{courses.rating | number:'2.1-1'}} <br/>
+        {{courses.price | currency:'AUD':true:'3.2-2'}} <br/>
+        {{courses.releaseDate | date:'shortDate'}} <br/>
+    `  
 })
 export class CoursesComponent{
-    email="panasala@in.ibm.com";
-    onKeyUp(){        
-        console.log(this.email);
+    courses = {
+        title : 'The title',
+        students : 4.9745,
+        rating: 30123,
+        price: 123456,
+        releaseDate: new Date(2016,3,1)
     }
 }
 
-//Component Creation Steps
-/*
-Create the component
-Register the component in a module - inside declarations array
-Finally we used in template of app.component.html
-*/
-
-/*
-This is Tedious work
-Automated step 
-ng g c course
-All the files are created for us
-*/
