@@ -8,15 +8,8 @@ import { CoursesService } from './courses.service';
 // Declarator function
 @Component({
     selector:'courses',  //  <courses>
-    //template:'<h2> Header Title </h2>'  //Data binding - expression
-    //template:'<h2>{{ title }}</h2>'  //Data binding - expression
-    //template:'<h2>{{ "Tile: "+title }}</h2>'  //Data binding - expression
-    //template:'<h2>{{ getTitle() }}</h2>'  //Data binding - expression
-
-    // npm install bootstrap --save
-    template:`
-        <input [value]="email" (keyup.enter)="email=$event.target.value;onKeyUp()"/>
-    
+    template:`    
+        <input [(ngModel)]="email" (keyup.enter)="onKeyUp()"/>    
     `  // Change to back tick - multiline
 })
 export class CoursesComponent{
