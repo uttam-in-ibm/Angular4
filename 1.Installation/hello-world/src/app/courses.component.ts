@@ -15,7 +15,7 @@ import { CoursesService } from './courses.service';
 
     // npm install bootstrap --save
     template:`
-    <button class="btn btn-primary" [class.active]="isActive">Save</button>
+    <button class="btn btn-primary" [style.backgroundColor]="isActive ? 'blue' : 'white'" [class.active]="isActive">Save</button>
     <h2>{{title}}</h2>
     <h2 [textContent]="title"></h2>
     <table>
