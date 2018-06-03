@@ -5,7 +5,7 @@ import { CoursesService } from './courses.service';
 @Component({
     selector:'courses',
     template:`    
-       {{text | summary:10}}
+       {{text | summary:20}}
     `  
 })
 export class CoursesComponent{
